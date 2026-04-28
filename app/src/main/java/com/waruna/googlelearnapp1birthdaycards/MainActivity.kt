@@ -50,8 +50,9 @@ fun GreetingColumn(name: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Waruna")
-        Text("Yasantha")
+        Text("TextColumn1")
+        Spacer(Modifier.height(60.dp))
+        Text("TextColumn2")
     }
 }
 @Composable
@@ -61,8 +62,9 @@ fun GreetingRow(name: String, modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center,
     ) {
-        Text("Warasdsauna")
-        Text("Yasasdsaantha")
+        Text("TextRow1")
+        Spacer(Modifier.width(80.dp))
+        Text("TextRow2")
     }
 }
 
@@ -73,7 +75,6 @@ fun GreetingBox(name: String, modifier: Modifier = Modifier) {
         contentAlignment = Alignment.TopCenter
     ) {
         Text("xxxxx", modifier = Modifier.align(Alignment.TopStart))
-        Spacer(Modifier.height(10.dp))
         Text("yyyyy", modifier = Modifier.align(Alignment.BottomEnd))
     }
 }

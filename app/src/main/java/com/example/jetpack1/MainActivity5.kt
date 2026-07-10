@@ -70,6 +70,12 @@ fun SignUpUi(){
     val userName = remember {
         mutableStateOf<String>("")
     }
+    val userEmail = remember {
+        mutableStateOf<String>("")
+    }
+    val userPassword = remember {
+        mutableStateOf<String>("")
+    }
     Column(
         modifier = Modifier.fillMaxSize()
             .verticalScroll(rememberScrollState()),
@@ -98,15 +104,19 @@ fun SignUpUi(){
         )
         OutlinedTextField(
             label = {Text("Email")},
-            value = "",
+            value = userEmail.value,
             modifier = Modifier.padding(top = 20.dp),
-            onValueChange = {}
+            onValueChange = {
+                userEmail.value = it
+            }
         )
         OutlinedTextField(
             label = {Text("Password")},
-            value = "",
+            value = userPassword.value,
             modifier = Modifier.padding(top = 20.dp),
-            onValueChange = {}
+            onValueChange = {
+                userPassword.value = it
+            }
         )
         Button( onClick = {},
             modifier = Modifier

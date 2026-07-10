@@ -43,3 +43,12 @@ ctrl+p -> view all layout parameters
 applys in progressive mode, one after one
 
 4
+scaffold
+UI can write within the theme scope or within Scaffold
+
+5
+enable auto  scroll layout
+
+6
+enable state management to type texts
+

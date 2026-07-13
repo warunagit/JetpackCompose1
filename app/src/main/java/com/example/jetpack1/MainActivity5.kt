@@ -1,6 +1,7 @@
 package com.example.jetpack1
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -33,6 +34,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -67,6 +69,7 @@ class MainActivity5 : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun SignUpUi(){
+    val context = LocalContext.current
     val userName = remember {
         mutableStateOf<String>("")
     }
@@ -118,7 +121,10 @@ fun SignUpUi(){
                 userPassword.value = it
             }
         )
-        Button( onClick = {},
+        Button(
+            onClick = {
+                Toast.makeText(context, "You have username: ${userName.value} and password: ${userPassword.value}.",Toast.LENGTH_SHORT).show()
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 85.dp)

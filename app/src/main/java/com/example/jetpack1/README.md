@@ -48,7 +48,14 @@ UI can write within the theme scope or within Scaffold
 
 5
 enable auto  scroll layout
+.verticalScroll(rememberScrollState()),
 
 6
-enable state management to type texts
+enable state management to type texts into text fields
+
+7
+context in compose must initialize manually
+val context = LocalContext.current
+
+8
 

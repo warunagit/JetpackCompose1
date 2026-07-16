@@ -58,4 +58,7 @@ context in compose must initialize manually
 val context = LocalContext.current
 
 8
+added login with firebase to MainActiity6
+https://youtu.be/KOnLpNZ4AFc?t=695
+
 

@@ -39,7 +39,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-class MainActivity5 : ComponentActivity() {
+class MainActivity6 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -58,7 +58,7 @@ class MainActivity5 : ComponentActivity() {
                             .fillMaxSize()
                             .background(Color.Yellow.copy(.5f))){
                         //can call as a method or write here
-                        SignUpUi()
+                        LogInUi()
                     }
                 }
             }
@@ -68,11 +68,8 @@ class MainActivity5 : ComponentActivity() {
 
 @Preview(showBackground = true)
 @Composable
-fun SignUpUi(){
+fun LogInUi(){
     val context = LocalContext.current
-    val userName = remember {
-        mutableStateOf<String>("")
-    }
     val userEmail = remember {
         mutableStateOf<String>("")
     }
@@ -99,13 +96,6 @@ fun SignUpUi(){
         )
         Spacer(modifier = Modifier.size(25.dp))
         OutlinedTextField(
-            label = {Text("User Name", modifier = Modifier.size(40.dp))},
-            value = userName.value,
-            onValueChange = {
-                userName.value = it
-            }
-        )
-        OutlinedTextField(
             label = {Text("Email")},
             value = userEmail.value,
             modifier = Modifier.padding(top = 20.dp),
@@ -123,18 +113,18 @@ fun SignUpUi(){
         )
         Button(
             onClick = {
-                Toast.makeText(
+                /*Toast.makeText(
                     context,
                     "You have username: ${userName.value} and password: ${userPassword.value}.",
                     Toast.LENGTH_SHORT)
-                    .show()
+                    .show()*/
             },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 85.dp)
                 .padding(top = 20.dp)
         ) {
-            Text(text = "Sign Up")
+            Text(text = "Sign In")
         }
     }
 }
